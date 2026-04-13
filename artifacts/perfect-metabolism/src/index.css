@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-brand-gold: hsl(39 46% 61%);
+  --color-brand-badge: hsl(37 36% 57%);
+  --color-brand-nav: hsl(60 4% 28%);
+
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* LIGHT MODE */
+:root {
+  --background: 36 33% 94%;
+  --foreground: 60 4% 11%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 60 4% 11%;
+  --card-border: 60 2% 90%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 60 4% 11%;
+  --popover-border: 60 2% 90%;
+  
+  --primary: 60 4% 11%;
+  --primary-foreground: 36 33% 94%;
+  
+  --secondary: 39 46% 61%;
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 60 2% 90%;
+  --muted-foreground: 60 2% 53%;
+  
+  --accent: 37 36% 57%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 60 2% 85%;
+  --input: 60 2% 85%;
+  --ring: 39 46% 61%;
+
+  --app-font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --app-font-serif: Georgia, serif;
+  --app-font-mono: Menlo, monospace;
+  
+  --radius: .5rem;
+}
+
+.dark {
+  --background: 60 4% 11%;
+  --foreground: 36 33% 94%;
+  
+  --card: 60 4% 15%;
+  --card-foreground: 36 33% 94%;
+  --card-border: 60 4% 20%;
+  
+  --popover: 60 4% 15%;
+  --popover-foreground: 36 33% 94%;
+  --popover-border: 60 4% 20%;
+  
+  --primary: 36 33% 94%;
+  --primary-foreground: 60 4% 11%;
+  
+  --secondary: 39 46% 61%;
+  --secondary-foreground: 0 0% 100%;
+  
+  --muted: 60 4% 20%;
+  --muted-foreground: 60 2% 60%;
+  
+  --accent: 37 36% 57%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 36 33% 94%;
+  
+  --border: 60 4% 20%;
+  --input: 60 4% 20%;
+  --ring: 39 46% 61%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}

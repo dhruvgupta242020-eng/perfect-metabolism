@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "p8MLyQZRZBlCmWvYSApvI"
+uri = "file://artifacts/perfect-metabolism/public/dermal-fillers.png"
+type = "image"
+title = "Dermal fillers treatment aesthetics"
+
+[[generated]]
+id = "FX6p3F_3CBQCL-sddanW6"
+uri = "file://artifacts/perfect-metabolism/public/laser-treatment.png"
+type = "image"
+title = "Laser treatment medical aesthetics"
+
+[[generated]]
+id = "CcKLCTV2eu50n6IZ8uFSz"
+uri = "file://artifacts/perfect-metabolism/public/microneedling.png"
+type = "image"
+title = "Micro-needling skin treatment"
+
+[[generated]]
+id = "MAbcvPB26ccSPgC2XlqRe"
+uri = "file://artifacts/perfect-metabolism/public/body-contouring.png"
+type = "image"
+title = "Body contouring treatment luxury"
+
+[[generated]]
+id = "xpP1n628SdrgTNN09T7G1"
+uri = "file://artifacts/perfect-metabolism/public/hero-bg.png"
+type = "image"
+title = "Luxury medical clinic background"
