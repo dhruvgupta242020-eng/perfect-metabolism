@@ -8,8 +8,6 @@ import { Badge } from "@/components/ui/badge";
 const MARQUEE_ITEMS = [
   "GLP-1 Protocols · Clinically Proven",
   "Botox & Fillers · Natural Results",
-  "Micro-needling · Skin Revival",
-  "Body Contouring · Sculpt & Define",
   "Personalised Diet Plans · Science-Backed",
   "Weight Loss Support · Ongoing Care"
 ];
