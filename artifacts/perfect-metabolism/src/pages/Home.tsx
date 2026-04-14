@@ -84,8 +84,8 @@ export default function Home() {
                 American Board Certified · Science-Backed · Results-Driven
               </p>
               <h1 className="text-5xl md:text-7xl font-serif text-primary leading-tight mb-8">
-                Transform Your Metabolism.<br />
-                <span className="italic text-brand-gold">Transform Your Life.</span>
+                India's Most Advanced<br />
+                <span className="italic text-brand-gold">Medical Weight Loss</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl">
                 India's most advanced medical weight loss and aesthetics clinic. GLP-1 protocols, personalised nutrition, and full-body aesthetic treatments — all under one roof.
