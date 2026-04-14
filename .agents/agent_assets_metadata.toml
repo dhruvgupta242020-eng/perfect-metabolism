@@ -30,3 +30,21 @@ id = "xpP1n628SdrgTNN09T7G1"
 uri = "file://artifacts/perfect-metabolism/public/hero-bg.png"
 type = "image"
 title = "Luxury medical clinic background"
+
+[[generated]]
+id = "9-mGoPlSFUNtx8xfFIesC"
+uri = "file://artifacts/perfect-metabolism/public/medical-weight-loss.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "MmGyi3BhLMS_GiwNi5rWg"
+uri = "file://artifacts/perfect-metabolism/public/hair-restoration.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "D1j7wp11sirx_Y2QtHzlb"
+uri = "file://artifacts/perfect-metabolism/public/iv-fluids.png"
+type = "image"
+title = "generated_image"

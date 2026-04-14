@@ -22,19 +22,19 @@ const SERVICES = [
     image: "/dermal-fillers.png"
   },
   {
-    title: "Laser Treatments",
-    description: "Advanced laser technology for skin rejuvenation, pigmentation, hair removal, and scar treatment.",
-    image: "/laser-treatment.png"
+    title: "Medical Weight Loss",
+    description: "Medically supervised GLP-1 protocols and personalised programmes to achieve sustainable, lasting weight loss.",
+    image: "/medical-weight-loss.png"
   },
   {
-    title: "Micro-needling",
-    description: "Stimulate collagen production for firmer, smoother skin. Treat acne scars, fine lines, and uneven texture.",
-    image: "/microneedling.png"
+    title: "Medical Hair Restoration",
+    description: "Evidence-based treatments to restore hair density and health, tailored to your specific hair loss pattern.",
+    image: "/hair-restoration.png"
   },
   {
-    title: "Body Contouring",
-    description: "Non-invasive body sculpting treatments to reduce stubborn fat and define your silhouette.",
-    image: "/body-contouring.png"
+    title: "IV Fluids",
+    description: "Bespoke intravenous nutrient infusions for hydration, energy, immunity, and overall cellular wellness.",
+    image: "/iv-fluids.png"
   }
 ];
 
