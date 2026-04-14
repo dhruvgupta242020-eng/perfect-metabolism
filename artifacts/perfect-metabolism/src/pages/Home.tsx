@@ -8,7 +8,6 @@ import { Badge } from "@/components/ui/badge";
 const MARQUEE_ITEMS = [
   "GLP-1 Protocols · Clinically Proven",
   "Botox & Fillers · Natural Results",
-  "Laser Treatments · Advanced Technology",
   "Micro-needling · Skin Revival",
   "Body Contouring · Sculpt & Define",
   "Personalised Diet Plans · Science-Backed",
@@ -93,7 +92,7 @@ export default function Home() {
               </p>
               
               <div className="flex flex-wrap gap-3 mb-12">
-                {["GLP-1 Treatments", "Customised Diet Plans", "Aesthetic Medicine", "Laser Treatments"].map((pill) => (
+                {["GLP-1 Treatments", "Customised Diet Plans", "Aesthetic Medicine"].map((pill) => (
                   <span key={pill} className="px-5 py-2.5 rounded-full bg-brand-badge text-white text-sm font-medium tracking-wide">
                     {pill}
                   </span>
