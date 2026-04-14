@@ -83,7 +83,7 @@ export default function Home() {
               <p className="text-sm md:text-base tracking-[0.2em] uppercase text-brand-gold mb-6 font-medium">
                 American Board Certified · Science-Backed · Results-Driven
               </p>
-              <h1 className="text-5xl md:text-7xl font-serif text-primary leading-tight mb-8">
+              <h1 className="text-5xl md:text-7xl text-primary leading-tight mb-8" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 900 }}>
                 India's Most Advanced<br />
                 <span className="italic text-brand-gold">Medical Weight Loss</span>
               </h1>
