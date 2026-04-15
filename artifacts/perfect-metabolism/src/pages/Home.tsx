@@ -1,9 +1,8 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 const MARQUEE_ITEMS = [
   "GLP-1 Protocols · Clinically Proven",
@@ -35,17 +34,127 @@ const SERVICES = [
   }
 ];
 
+function BookingModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const [form, setForm] = useState({ name: "", phone: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const handleClose = () => {
+    setSubmitted(false);
+    setForm({ name: "", phone: "", message: "" });
+    onClose();
+  };
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={handleClose} />
+          <motion.div
+            className="relative bg-background rounded-3xl shadow-2xl w-full max-w-md p-8 z-10"
+            initial={{ opacity: 0, y: 30, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 30, scale: 0.97 }}
+            transition={{ duration: 0.3 }}
+          >
+            <button
+              onClick={handleClose}
+              className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-muted-foreground hover:text-primary hover:bg-border/40 transition-colors"
+            >
+              ✕
+            </button>
+
+            {submitted ? (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 rounded-full bg-brand-gold/10 flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-8 h-8 text-brand-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-serif text-primary mb-3">Request Received</h3>
+                <p className="text-muted-foreground mb-6">Thank you, {form.name}. Dr. Nihara's team will be in touch within 24 hours to confirm your consultation.</p>
+                <Button onClick={handleClose} className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-3">
+                  Done
+                </Button>
+              </div>
+            ) : (
+              <>
+                <p className="text-xs tracking-[0.2em] uppercase text-brand-gold mb-2 font-medium">Free Consultation</p>
+                <h3 className="text-2xl font-serif text-primary mb-1">Book Your Session</h3>
+                <p className="text-sm text-muted-foreground mb-6">Speak directly with Dr. Nihara Sudarshan — no commitment, just clarity.</p>
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label className="text-xs uppercase tracking-widest text-muted-foreground font-medium block mb-1.5">Full Name</label>
+                    <input
+                      required
+                      value={form.name}
+                      onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                      placeholder="Your name"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-white text-primary placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-brand-gold/40 text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs uppercase tracking-widest text-muted-foreground font-medium block mb-1.5">Phone Number</label>
+                    <input
+                      required
+                      type="tel"
+                      value={form.phone}
+                      onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                      placeholder="+91 98765 43210"
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-white text-primary placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-brand-gold/40 text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs uppercase tracking-widest text-muted-foreground font-medium block mb-1.5">Your Goals</label>
+                    <textarea
+                      rows={3}
+                      value={form.message}
+                      onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                      placeholder="Tell us what you'd like to achieve..."
+                      className="w-full px-4 py-3 rounded-xl border border-border bg-white text-primary placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-brand-gold/40 text-sm resize-none"
+                    />
+                  </div>
+                  <Button type="submit" className="w-full bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full py-6 text-base font-medium tracking-wide mt-2">
+                    Request My Consultation
+                  </Button>
+                </form>
+              </>
+            )}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
 export default function Home() {
   const getAssetUrl = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, "") + path;
+  const [bookingOpen, setBookingOpen] = useState(false);
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-brand-gold selection:text-white">
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="font-serif italic text-2xl text-brand-gold tracking-wide">
+          <a href="#" className="font-serif italic text-2xl text-brand-gold tracking-wide">
             Perfect Metabolism
-          </Link>
+          </a>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-bold tracking-[0.1em] uppercase text-muted-foreground">
             <a href="#about" className="hover:text-brand-gold transition-colors">About</a>
@@ -54,7 +163,10 @@ export default function Home() {
             <a href="#results" className="hover:text-brand-gold transition-colors">Results</a>
           </div>
           
-          <Button className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-6 font-medium tracking-wide">
+          <Button
+            onClick={() => setBookingOpen(true)}
+            className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-6 font-medium tracking-wide"
+          >
             Book Now
           </Button>
         </div>
@@ -98,10 +210,17 @@ export default function Home() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-6 text-lg">
+                <Button
+                  onClick={() => setBookingOpen(true)}
+                  className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-6 text-lg"
+                >
                   Free Consultation
                 </Button>
-                <Button variant="outline" className="rounded-full px-8 py-6 text-lg border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white transition-all">
+                <Button
+                  variant="outline"
+                  onClick={() => scrollTo("services")}
+                  className="rounded-full px-8 py-6 text-lg border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white transition-all"
+                >
                   View Packages
                 </Button>
               </div>
@@ -161,7 +280,7 @@ export default function Home() {
               </div>
 
               <p className="text-xs tracking-[0.2em] uppercase text-brand-gold mb-5 font-medium">Our Approach</p>
-              <div className="space-y-5">
+              <div className="space-y-5 mb-10">
                 {[
                   { title: "Evidence-Based Medicine", desc: "Every treatment protocol at Perfect Metabolism is grounded in peer-reviewed clinical research. We do not follow trends — we follow evidence. From GLP-1 dosing to laser parameters, every decision is data-driven." },
                   { title: "Personalised Protocols", desc: "No two patients are alike. Dr. Nihara builds every programme from comprehensive bloodwork, hormonal profiling, and metabolic testing. Your plan is uniquely yours — designed for your body, your goals, and your life." },
@@ -176,6 +295,13 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+
+              <Button
+                onClick={() => setBookingOpen(true)}
+                className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-5 text-base"
+              >
+                Book a Free Consultation
+              </Button>
             </motion.div>
             
             <motion.div 
@@ -272,6 +398,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group cursor-pointer"
+                onClick={() => setBookingOpen(true)}
               >
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
                   <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
@@ -287,8 +414,11 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-16 text-center">
-            <Button className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-6 text-lg">
-              View All Services
+            <Button
+              onClick={() => setBookingOpen(true)}
+              className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-6 text-lg"
+            >
+              Book a Service
             </Button>
           </div>
         </div>
@@ -323,6 +453,15 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <div className="mt-16 text-center">
+            <Button
+              onClick={() => setBookingOpen(true)}
+              className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-10 py-6 text-lg"
+            >
+              Start with a Free Consultation
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -356,7 +495,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
+      <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-brand-gold/10" />
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <p className="text-sm tracking-[0.2em] uppercase text-brand-gold mb-4 font-medium">Start Today</p>
@@ -382,7 +521,10 @@ export default function Home() {
             ))}
           </div>
 
-          <Button className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-10 py-8 text-xl w-full sm:w-auto shadow-xl shadow-brand-gold/20">
+          <Button
+            onClick={() => setBookingOpen(true)}
+            className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-10 py-8 text-xl w-full sm:w-auto shadow-xl shadow-brand-gold/20"
+          >
             Book Your Free Consultation
           </Button>
         </div>
@@ -395,9 +537,9 @@ export default function Home() {
             Perfect Metabolism
           </div>
           <div className="flex gap-8 text-sm">
-            <a href="#" className="hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="hover:text-white transition-colors">Facebook</a>
-            <a href="#" className="hover:text-white transition-colors">Contact</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook</a>
+            <button onClick={() => setBookingOpen(true)} className="hover:text-white transition-colors">Contact</button>
           </div>
           <div className="text-sm text-white/40">
             © {new Date().getFullYear()} Perfect Metabolism. All rights reserved.
