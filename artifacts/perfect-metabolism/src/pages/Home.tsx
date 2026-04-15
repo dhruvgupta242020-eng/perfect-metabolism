@@ -133,23 +133,45 @@ export default function Home() {
             >
               <p className="text-sm tracking-[0.2em] uppercase text-brand-gold mb-4 font-medium">About Dr. Nihara</p>
               <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8">Medicine Meets <span className="italic text-brand-gold">Precision.</span></h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-                Dr. Nihara Sudarshan is an American Board Certified physician with an MBBS and MD, bringing world-class medical expertise to metabolic health and aesthetic medicine. With over 8 years of clinical experience, she has helped hundreds of patients achieve lasting transformations.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                Dr. Nihara Sudarshan is an American Board Certified physician with an MBBS and MD, bringing world-class medical expertise to metabolic health and aesthetic medicine. Her approach combines evidence-based medicine with personalised care, ensuring every patient receives a treatment protocol tailored specifically to their body, goals, and lifestyle.
               </p>
-              
-              <div className="space-y-6">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-10">
+                With over 8 years of clinical experience and more than 500 successful patient transformations, Dr. Nihara has established Perfect Metabolism as the premier destination for medical weight loss and aesthetic treatments in India.
+              </p>
+
+              <p className="text-xs tracking-[0.2em] uppercase text-brand-gold mb-5 font-medium">Credentials &amp; Expertise</p>
+              <div className="space-y-5 mb-12">
                 {[
-                  { title: "American Board Certified Physician", desc: "Internationally recognised medical certification ensuring the highest clinical standards." },
-                  { title: "MBBS & MD", desc: "Dual medical degrees with specialisation in metabolic disorders and body composition." },
-                  { title: "GLP-1 Specialist", desc: "Trained in the latest semaglutide and tirzepatide protocols for sustainable weight loss." },
-                  { title: "Aesthetic Medicine Expert", desc: "Advanced training in botox, dermal fillers, laser therapies, and non-surgical body contouring." },
-                  { title: "Nutrition & Metabolic Coach", desc: "Personalised diet protocols designed around bloodwork, hormones, and lifestyle." }
+                  { title: "American Board Certified Physician", desc: "Internationally recognised medical certification ensuring the highest clinical standards. Dr. Nihara's board certification from the United States reflects rigorous training and examination in metabolic and aesthetic medicine." },
+                  { title: "MBBS & MD (Dual Medical Degrees)", desc: "Dual medical degrees with specialisation in metabolic disorders and body composition. Her MD programme focused specifically on endocrinology and metabolic health, providing deep expertise in weight management." },
+                  { title: "GLP-1 & Weight Loss Specialist", desc: "Extensively trained in the latest semaglutide and tirzepatide protocols for sustainable weight loss. Dr. Nihara stays current with the latest clinical trials and FDA guidance on GLP-1 receptor agonists." },
+                  { title: "Aesthetic Medicine Expert", desc: "Advanced training in botox administration, dermal filler techniques, laser therapies, RF micro-needling, and non-surgical body contouring. Her aesthetic work is known for producing natural, refined results." },
+                  { title: "Nutrition & Metabolic Coach", desc: "Personalised diet protocols designed around comprehensive bloodwork, hormonal panels, metabolic rate testing, and individual lifestyle factors. Every plan is built from data, not guesswork." },
+                  { title: "Continuous Medical Education", desc: "Actively participates in international medical conferences, workshops, and training programmes to stay at the forefront of metabolic medicine and aesthetic technology advancements." }
                 ].map((cred, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 shrink-0" />
                     <div>
                       <h4 className="font-bold text-primary">{cred.title}</h4>
                       <p className="text-muted-foreground text-sm mt-1">{cred.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-xs tracking-[0.2em] uppercase text-brand-gold mb-5 font-medium">Our Approach</p>
+              <div className="space-y-5">
+                {[
+                  { title: "Evidence-Based Medicine", desc: "Every treatment protocol at Perfect Metabolism is grounded in peer-reviewed clinical research. We do not follow trends — we follow evidence. From GLP-1 dosing to laser parameters, every decision is data-driven." },
+                  { title: "Personalised Protocols", desc: "No two patients are alike. Dr. Nihara builds every programme from comprehensive bloodwork, hormonal profiling, and metabolic testing. Your plan is uniquely yours — designed for your body, your goals, and your life." },
+                  { title: "Holistic Patient Care", desc: "Weight loss and aesthetics are not just physical — they are deeply personal. Our programmes address nutrition, exercise, mindset, hormonal health, and emotional wellbeing for truly lasting results." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand-gold mt-2 shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-primary">{item.title}</h4>
+                      <p className="text-muted-foreground text-sm mt-1">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -170,17 +192,20 @@ export default function Home() {
                   className="w-full h-auto object-contain object-top"
                 />
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-xl z-20 max-w-xs">
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-3xl font-serif text-brand-gold">500+</p>
-                    <p className="text-xs uppercase tracking-widest text-muted-foreground mt-1">Patients Transformed</p>
-                  </div>
-                  <div className="h-px w-full bg-border" />
-                  <div>
-                    <p className="text-3xl font-serif text-brand-gold">98%</p>
-                    <p className="text-xs uppercase tracking-widest text-muted-foreground mt-1">Patient Satisfaction Rate</p>
-                  </div>
+              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl z-20 max-w-xs">
+                <div className="space-y-3">
+                  {[
+                    { stat: "500+", label: "Patients Transformed" },
+                    { stat: "8+", label: "Years Clinical Experience" },
+                    { stat: "98%", label: "Patient Satisfaction Rate" },
+                    { stat: "100%", label: "Board Certified & Insured" },
+                  ].map((s, i, arr) => (
+                    <div key={i}>
+                      <p className="text-2xl font-serif text-brand-gold">{s.stat}</p>
+                      <p className="text-xs uppercase tracking-widest text-muted-foreground mt-0.5">{s.label}</p>
+                      {i < arr.length - 1 && <div className="h-px w-full bg-border mt-3" />}
+                    </div>
+                  ))}
                 </div>
               </div>
             </motion.div>
