@@ -48,10 +48,10 @@ export default function Home() {
           </Link>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-bold tracking-[0.1em] uppercase text-muted-foreground">
-            <Link href="#about" className="hover:text-brand-gold transition-colors">About</Link>
-            <Link href="#services" className="hover:text-brand-gold transition-colors">Services</Link>
-            <Link href="#process" className="hover:text-brand-gold transition-colors">Process</Link>
-            <Link href="#results" className="hover:text-brand-gold transition-colors">Results</Link>
+            <a href="#about" className="hover:text-brand-gold transition-colors">About</a>
+            <a href="#services" className="hover:text-brand-gold transition-colors">Services</a>
+            <a href="#process" className="hover:text-brand-gold transition-colors">Process</a>
+            <a href="#results" className="hover:text-brand-gold transition-colors">Results</a>
           </div>
           
           <Button className="bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full px-8 py-6 font-medium tracking-wide">
@@ -124,7 +124,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
