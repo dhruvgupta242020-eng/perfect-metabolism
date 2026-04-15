@@ -163,11 +163,11 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+              <div className="rounded-2xl overflow-hidden shadow-2xl relative z-10">
                 <img 
                   src={getAssetUrl("/doctor.jpeg")} 
                   alt="Dr. Nihara Sudarshan" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain object-top"
                 />
               </div>
               <div className="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-xl z-20 max-w-xs">
