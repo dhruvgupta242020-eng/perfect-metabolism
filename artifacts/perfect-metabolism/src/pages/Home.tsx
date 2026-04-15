@@ -47,7 +47,7 @@ export default function Home() {
             Perfect Metabolism
           </Link>
           
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-[0.1em] uppercase text-brand-nav">
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-[0.1em] uppercase text-brand-nav" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
             <Link href="#about" className="hover:text-brand-gold transition-colors">About</Link>
             <Link href="#services" className="hover:text-brand-gold transition-colors">Services</Link>
             <Link href="#process" className="hover:text-brand-gold transition-colors">Process</Link>
