@@ -448,7 +448,7 @@ export default function Home() {
                 <span className="text-4xl font-bold text-primary">₹12,000</span>
                 <span className="text-muted-foreground mb-1">/month</span>
               </div>
-              <p className="text-xs text-muted-foreground mb-8">3-month minimum commitment</p>
+              <div className="mb-8" />
               <ul className="space-y-3 mb-10 flex-1">
                 {[
                   "Initial consultation with Dr. Nihara",
@@ -491,7 +491,7 @@ export default function Home() {
                 <span className="text-4xl font-bold text-white">₹18,000</span>
                 <span className="text-white/60 mb-1">/month</span>
               </div>
-              <p className="text-xs text-white/50 mb-8">3-month minimum · Best results</p>
+              <div className="mb-8" />
               <ul className="space-y-3 mb-10 flex-1">
                 {[
                   "Everything in Starter, plus:",
@@ -531,7 +531,7 @@ export default function Home() {
                 <span className="text-4xl font-bold text-primary">₹25,000</span>
                 <span className="text-muted-foreground mb-1">/month</span>
               </div>
-              <p className="text-xs text-muted-foreground mb-8">6-month program · Maximum results</p>
+              <div className="mb-8" />
               <ul className="space-y-3 mb-10 flex-1">
                 {[
                   "Everything in Transform, plus:",
