@@ -457,7 +457,7 @@ export default function Home() {
                   "Everything in Transform, plus:",
                   "Unlimited access to Dr. Nihara directly",
                   "Advanced GLP-1 dual-agonist protocol",
-                  "4 premium aesthetic treatments/month",
+                  "2 premium aesthetic consultations/month",
                   "Blood testing every 6 weeks",
                   "VIP priority clinic appointments",
                   "Free maintenance session after program ends",
