@@ -444,9 +444,9 @@ export default function Home() {
               className="rounded-3xl border border-border p-8 bg-background flex flex-col"
             >
               <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-medium mb-3">Starter</p>
-              <h3 className="text-3xl font-bold text-primary mb-2">Kickstart</h3>
+              <h3 className="text-3xl font-bold text-primary mb-2">Starter</h3>
               <div className="flex items-end gap-1 mb-1">
-                <span className="text-4xl font-bold text-primary">₹7,000</span>
+                <span className="text-4xl font-bold text-primary">₹12,000</span>
                 <span className="text-muted-foreground mb-1">/month</span>
               </div>
               <p className="text-xs text-muted-foreground mb-8">3-month minimum commitment</p>
@@ -488,15 +488,15 @@ export default function Home() {
                 Most Popular
               </div>
               <p className="text-xs tracking-[0.2em] uppercase text-brand-gold/70 font-medium mb-3">Transform</p>
-              <h3 className="text-3xl font-bold text-white mb-2">Complete</h3>
+              <h3 className="text-3xl font-bold text-white mb-2">Transform</h3>
               <div className="flex items-end gap-1 mb-1">
-                <span className="text-4xl font-bold text-white">₹15,000</span>
+                <span className="text-4xl font-bold text-white">₹18,000</span>
                 <span className="text-white/60 mb-1">/month</span>
               </div>
               <p className="text-xs text-white/50 mb-8">3-month minimum · Best results</p>
               <ul className="space-y-3 mb-10 flex-1">
                 {[
-                  "Everything in Kickstart, plus:",
+                  "Everything in Starter, plus:",
                   "Full hormonal & metabolic deep-dive panel",
                   "Weekly GLP-1 injection protocol",
                   "Bi-weekly video calls with Dr. Nihara",
@@ -529,7 +529,7 @@ export default function Home() {
               className="rounded-3xl border border-border p-8 bg-background flex flex-col"
             >
               <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-medium mb-3">Elite</p>
-              <h3 className="text-3xl font-bold text-primary mb-2">Concierge</h3>
+              <h3 className="text-3xl font-bold text-primary mb-2">Elite</h3>
               <div className="flex items-end gap-1 mb-1">
                 <span className="text-4xl font-bold text-primary">₹25,000</span>
                 <span className="text-muted-foreground mb-1">/month</span>
