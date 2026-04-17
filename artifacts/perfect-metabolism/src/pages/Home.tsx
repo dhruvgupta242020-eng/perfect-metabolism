@@ -492,7 +492,6 @@ export default function Home() {
               <ul className="space-y-3 mb-10 flex-1">
                 {[
                   "Initial consultation with Dr. Nihara",
-                  "Basic metabolic & bloodwork panel",
                   "Personalised diet chart & meal plan",
                   "4 GLP-1 injections",
                   "Monthly progress review",
