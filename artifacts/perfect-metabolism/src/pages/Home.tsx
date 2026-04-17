@@ -159,6 +159,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8 text-sm font-bold tracking-[0.1em] uppercase text-muted-foreground">
             <a href="#about" className="hover:text-brand-gold transition-colors">About</a>
             <a href="#services" className="hover:text-brand-gold transition-colors">Services</a>
+            <a href="#packages" className="hover:text-brand-gold transition-colors">Packages</a>
             <a href="#process" className="hover:text-brand-gold transition-colors">Process</a>
             <a href="#results" className="hover:text-brand-gold transition-colors">Results</a>
           </div>
@@ -218,7 +219,7 @@ export default function Home() {
                 </Button>
                 <Button
                   variant="outline"
-                  onClick={() => scrollTo("services")}
+                  onClick={() => scrollTo("packages")}
                   className="rounded-full px-8 py-6 text-lg border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white transition-all"
                 >
                   View Packages
@@ -420,6 +421,147 @@ export default function Home() {
             >
               Book a Service
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Packages Section */}
+      <section id="packages" className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-sm tracking-[0.2em] uppercase text-brand-gold mb-4 font-medium">Investment in You</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">Choose Your <span className="italic text-brand-gold">Programme.</span></h2>
+            <p className="text-lg text-muted-foreground">Every package includes direct access to Dr. Nihara and a fully personalised treatment plan. No shortcuts — only results.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            {/* Starter */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="rounded-3xl border border-border p-8 bg-background flex flex-col"
+            >
+              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-medium mb-3">Starter</p>
+              <h3 className="text-3xl font-bold text-primary mb-2">Kickstart</h3>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-bold text-primary">₹7,000</span>
+                <span className="text-muted-foreground mb-1">/month</span>
+              </div>
+              <p className="text-xs text-muted-foreground mb-8">3-month minimum commitment</p>
+              <ul className="space-y-3 mb-10 flex-1">
+                {[
+                  "Initial consultation with Dr. Nihara",
+                  "Basic metabolic & bloodwork panel",
+                  "Personalised diet chart & meal plan",
+                  "1 GLP-1 injection session/month",
+                  "Monthly progress review",
+                  "WhatsApp support (business hours)",
+                  "Access to the PM digital health portal",
+                  "Basic supplement recommendations",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="text-brand-gold mt-0.5 shrink-0">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Button
+                onClick={() => setBookingOpen(true)}
+                variant="outline"
+                className="w-full rounded-full py-6 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white transition-all font-medium"
+              >
+                Get Started
+              </Button>
+            </motion.div>
+
+            {/* Most Popular */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="rounded-3xl border-2 border-brand-gold p-8 bg-primary text-white flex flex-col relative shadow-2xl shadow-brand-gold/20 md:-mt-4 md:mb-4"
+            >
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-gold text-white text-xs font-bold tracking-[0.15em] uppercase px-5 py-1.5 rounded-full">
+                Most Popular
+              </div>
+              <p className="text-xs tracking-[0.2em] uppercase text-brand-gold/70 font-medium mb-3">Transform</p>
+              <h3 className="text-3xl font-bold text-white mb-2">Complete</h3>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-bold text-white">₹15,000</span>
+                <span className="text-white/60 mb-1">/month</span>
+              </div>
+              <p className="text-xs text-white/50 mb-8">3-month minimum · Best results</p>
+              <ul className="space-y-3 mb-10 flex-1">
+                {[
+                  "Everything in Kickstart, plus:",
+                  "Full hormonal & metabolic deep-dive panel",
+                  "Weekly GLP-1 injection protocol",
+                  "Bi-weekly video calls with Dr. Nihara",
+                  "Customised exercise & lifestyle plan",
+                  "24/7 WhatsApp priority support",
+                  "2 aesthetic treatments/month (botox, micro-needling, or laser)",
+                  "Body composition analysis monthly",
+                  "Emotional & mindset coaching sessions",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-white/80">
+                    <span className="text-brand-gold mt-0.5 shrink-0">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Button
+                onClick={() => setBookingOpen(true)}
+                className="w-full rounded-full py-6 bg-brand-gold hover:bg-brand-gold/90 text-white font-medium"
+              >
+                Transform Now
+              </Button>
+            </motion.div>
+
+            {/* Elite */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="rounded-3xl border border-border p-8 bg-background flex flex-col"
+            >
+              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-medium mb-3">Elite</p>
+              <h3 className="text-3xl font-bold text-primary mb-2">Concierge</h3>
+              <div className="flex items-end gap-1 mb-1">
+                <span className="text-4xl font-bold text-primary">₹25,000</span>
+                <span className="text-muted-foreground mb-1">/month</span>
+              </div>
+              <p className="text-xs text-muted-foreground mb-8">6-month program · Maximum results</p>
+              <ul className="space-y-3 mb-10 flex-1">
+                {[
+                  "Everything in Transform, plus:",
+                  "Unlimited access to Dr. Nihara directly",
+                  "Advanced GLP-1 dual-agonist protocol",
+                  "4 premium aesthetic treatments/month",
+                  "Full lip filler or botox session included",
+                  "Body contouring & sculpting sessions",
+                  "Personal shopping & nutrition concierge",
+                  "Blood testing every 6 weeks",
+                  "VIP priority clinic appointments",
+                  "Free maintenance session after program ends",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="text-brand-gold mt-0.5 shrink-0">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Button
+                onClick={() => setBookingOpen(true)}
+                variant="outline"
+                className="w-full rounded-full py-6 border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white transition-all font-medium"
+              >
+                Go Elite
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>
