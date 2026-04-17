@@ -497,7 +497,6 @@ export default function Home() {
                   "4 GLP-1 injections",
                   "Monthly progress review",
                   "WhatsApp support (business hours)",
-                  "Access to the PM digital health portal",
                   "Basic supplement recommendations",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
