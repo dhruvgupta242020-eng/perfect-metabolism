@@ -502,7 +502,6 @@ export default function Home() {
                   "24/7 WhatsApp priority support",
                   "2 body aesthetic consultations/month (botox, micro-needling, or laser)",
                   "Body composition analysis monthly",
-                  "Emotional & mindset coaching sessions",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-white/80">
                     <span className="text-brand-gold mt-0.5 shrink-0">✓</span>
