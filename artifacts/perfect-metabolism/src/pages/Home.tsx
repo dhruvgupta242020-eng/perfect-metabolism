@@ -500,7 +500,7 @@ export default function Home() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <span className="text-brand-gold mt-0.5 shrink-0">✓</span>
-                    {item}
+                    <span className={i === 2 ? "font-bold text-primary" : ""}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -540,7 +540,7 @@ export default function Home() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <span className="text-brand-gold mt-0.5 shrink-0">✓</span>
-                    <span className={i === 0 ? "font-bold text-primary" : ""}>{item}</span>
+                    <span className={i === 0 || i === 2 ? "font-bold text-primary" : ""}>{item}</span>
                   </li>
                 ))}
               </ul>
