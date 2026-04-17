@@ -454,7 +454,7 @@ export default function Home() {
                   "Initial consultation with Dr. Nihara",
                   "Basic metabolic & bloodwork panel",
                   "Personalised diet chart & meal plan",
-                  "4 GLP-1 injection sessions/month",
+                  "4 GLP-1 injections",
                   "Monthly progress review",
                   "WhatsApp support (business hours)",
                   "Access to the PM digital health portal",
