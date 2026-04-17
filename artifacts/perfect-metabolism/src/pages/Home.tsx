@@ -443,7 +443,6 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="rounded-3xl border border-border p-8 bg-background flex flex-col"
             >
-              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-medium mb-3">Starter</p>
               <h3 className="text-3xl font-bold text-primary mb-2">Starter</h3>
               <div className="flex items-end gap-1 mb-1">
                 <span className="text-4xl font-bold text-primary">₹12,000</span>
@@ -487,7 +486,6 @@ export default function Home() {
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-gold text-white text-xs font-bold tracking-[0.15em] uppercase px-5 py-1.5 rounded-full">
                 Most Popular
               </div>
-              <p className="text-xs tracking-[0.2em] uppercase text-brand-gold/70 font-medium mb-3">Transform</p>
               <h3 className="text-3xl font-bold text-white mb-2">Transform</h3>
               <div className="flex items-end gap-1 mb-1">
                 <span className="text-4xl font-bold text-white">₹18,000</span>
@@ -528,7 +526,6 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="rounded-3xl border border-border p-8 bg-background flex flex-col"
             >
-              <p className="text-xs tracking-[0.2em] uppercase text-muted-foreground font-medium mb-3">Elite</p>
               <h3 className="text-3xl font-bold text-primary mb-2">Elite</h3>
               <div className="flex items-end gap-1 mb-1">
                 <span className="text-4xl font-bold text-primary">₹25,000</span>
