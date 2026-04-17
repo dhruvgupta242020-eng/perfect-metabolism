@@ -500,7 +500,7 @@ export default function Home() {
                   "Bi-weekly video calls with Dr. Nihara",
                   "Customised exercise & lifestyle plan",
                   "24/7 WhatsApp priority support",
-                  "2 aesthetic treatments/month (botox, micro-needling, or laser)",
+                  "2 body aesthetic consultations/month (botox, micro-needling, or laser)",
                   "Body composition analysis monthly",
                   "Emotional & mindset coaching sessions",
                 ].map((item, i) => (
