@@ -460,7 +460,6 @@ export default function Home() {
                   "2 premium aesthetic consultations/month",
                   "Blood testing every 6 weeks",
                   "VIP priority clinic appointments",
-                  "Free maintenance session after program ends",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm text-white/80">
                     <span className="text-brand-gold mt-0.5 shrink-0">✓</span>
