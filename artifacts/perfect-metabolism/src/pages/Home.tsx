@@ -441,7 +441,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="rounded-3xl border-2 border-brand-gold p-8 bg-primary text-white flex flex-col relative shadow-2xl shadow-brand-gold/20 md:-mt-4 md:mb-4"
+              className="rounded-3xl border-2 border-brand-gold p-8 bg-primary text-white flex flex-col relative shadow-2xl shadow-brand-gold/20"
             >
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-gold text-white text-xs font-bold tracking-[0.15em] uppercase px-5 py-1.5 rounded-full">
                 Most Popular
