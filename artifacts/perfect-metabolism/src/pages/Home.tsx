@@ -13,8 +13,8 @@ const MARQUEE_ITEMS = [
 
 const SERVICES = [
   {
-    title: "Dermal Fillers",
-    description: "Experience fuller, smoother skin and lips. Restore volume with natural-looking results and zero downtime.",
+    title: "Derma Fillers & Botox",
+    description: "Experience fuller, smoother skin and lips. Restore volume and erase fine lines with natural-looking results and zero downtime.",
     image: "/dermal-fillers.png"
   },
   {
@@ -31,6 +31,11 @@ const SERVICES = [
     title: "IV Fluids",
     description: "Bespoke intravenous nutrient infusions for hydration, energy, immunity, and overall cellular wellness.",
     image: "/iv-fluids.png"
+  },
+  {
+    title: "Personalised Diet & Nutrition",
+    description: "Custom meal plans and macro coaching designed around your bloodwork, metabolic rate, and lifestyle for lasting results.",
+    image: "/medical-weight-loss.png"
   }
 ];
 
@@ -140,6 +145,8 @@ function BookingModal({ open, onClose }: { open: boolean; onClose: () => void })
 export default function Home() {
   const getAssetUrl = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, "") + path;
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [serviceOffset, setServiceOffset] = useState(0);
+  const VISIBLE = 4;
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -390,29 +397,60 @@ export default function Home() {
       {/* Aesthetic Services Grid */}
       <section id="services" className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICES.map((service, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group cursor-pointer"
-                onClick={() => setBookingOpen(true)}
-              >
-                <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
-                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <img 
-                    src={getAssetUrl(service.image)} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <h3 className="text-xl font-serif text-primary mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground line-clamp-3">{service.description}</p>
-              </motion.div>
-            ))}
+          <div className="relative">
+            {/* Arrow buttons */}
+            <button
+              onClick={() => setServiceOffset(o => Math.max(0, o - 1))}
+              disabled={serviceOffset === 0}
+              className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-border bg-white shadow-md flex items-center justify-center text-primary disabled:opacity-30 hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all"
+              aria-label="Previous"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => setServiceOffset(o => Math.min(SERVICES.length - VISIBLE, o + 1))}
+              disabled={serviceOffset >= SERVICES.length - VISIBLE}
+              className="absolute -right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-border bg-white shadow-md flex items-center justify-center text-primary disabled:opacity-30 hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all"
+              aria-label="Next"
+            >
+              →
+            </button>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 overflow-hidden">
+              {SERVICES.slice(serviceOffset, serviceOffset + VISIBLE).map((service, i) => (
+                <motion.div
+                  key={serviceOffset + i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="group cursor-pointer"
+                  onClick={() => setBookingOpen(true)}
+                >
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
+                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                    <img
+                      src={getAssetUrl(service.image)}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <h3 className="text-xl font-serif text-primary mb-2">{service.title}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-3">{service.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: SERVICES.length - VISIBLE + 1 }).map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setServiceOffset(idx)}
+                  className={`w-2 h-2 rounded-full transition-all ${idx === serviceOffset ? "bg-brand-gold w-5" : "bg-border"}`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
           <div className="mt-16 text-center">
             <Button
