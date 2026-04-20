@@ -35,7 +35,7 @@ const SERVICES = [
   {
     title: "Personalised Diet & Nutrition",
     description: "Custom meal plans and macro coaching designed around your bloodwork, metabolic rate, and lifestyle for lasting results.",
-    image: "/medical-weight-loss.png"
+    image: "/diet-nutrition.png"
   }
 ];
 

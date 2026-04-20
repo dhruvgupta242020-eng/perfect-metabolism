@@ -48,3 +48,9 @@ id = "D1j7wp11sirx_Y2QtHzlb"
 uri = "file://artifacts/perfect-metabolism/public/iv-fluids.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "L_AWxud5yMmJ0TmYg1m-Q"
+uri = "file://artifacts/perfect-metabolism/public/diet-nutrition.png"
+type = "image"
+title = "generated_image"
