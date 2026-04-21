@@ -13,7 +13,7 @@ const MARQUEE_ITEMS = [
 
 const SERVICES = [
   {
-    title: "Derma Fillers & Botox",
+    title: "Dermal Fillers & Botox",
     description: "Experience fuller, smoother skin and lips. Restore volume and erase fine lines with natural-looking results and zero downtime.",
     image: "/dermal-fillers.png"
   },
