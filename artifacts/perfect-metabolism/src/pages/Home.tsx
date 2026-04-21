@@ -274,7 +274,7 @@ export default function Home() {
                   { title: "MBBS & MD (Dual Medical Degrees)", desc: "Dual medical degrees with specialisation in metabolic disorders and body composition. Her MD programme focused specifically on endocrinology and metabolic health, providing deep expertise in weight management." },
                   { title: "GLP-1 & Weight Loss Specialist", desc: "Extensively trained in the latest semaglutide and tirzepatide protocols for sustainable weight loss. Dr. Nihara stays current with the latest clinical trials and FDA guidance on GLP-1 receptor agonists." },
                   { title: "Aesthetic Medicine Expert", desc: "Advanced training in botox administration, dermal filler techniques, laser therapies, RF micro-needling, and non-surgical body contouring. Her aesthetic work is known for producing natural, refined results." },
-                  { title: "Nutrition & Metabolic Coach", desc: "Personalised diet protocols designed around comprehensive bloodwork, hormonal panels, metabolic rate testing, and individual lifestyle factors. Every plan is built from data, not guesswork." },
+                  { title: "Aesthetic Medicine Fellowship", desc: "Completed a dedicated fellowship in aesthetic medicine covering advanced injectables, laser therapies, RF micro-needling, and non-surgical body contouring — combining clinical science with an eye for natural, refined results." },
                   { title: "Continuous Medical Education", desc: "Actively participates in international medical conferences, workshops, and training programmes to stay at the forefront of metabolic medicine and aesthetic technology advancements." }
                 ].map((cred, i) => (
                   <div key={i} className="flex gap-4">
@@ -361,7 +361,7 @@ export default function Home() {
               {
                 title: "GLP-1 Weight Loss Program",
                 desc: "Medically supervised semaglutide and tirzepatide treatments proven to reduce body weight by 15-22%.",
-                tags: ["Semaglutide", "Tirzepatide", "Ozempic Protocol"]
+                tags: ["Semaglutide", "Tirzepatide", "Ozempic Protocol", "Mounjaro"]
               },
               {
                 title: "Personalised Diet & Nutrition",
@@ -371,7 +371,7 @@ export default function Home() {
               {
                 title: "Botox & Anti-Ageing",
                 desc: "Precision botulinum toxin treatments for forehead lines, crow's feet, jawline slimming, and preventive anti-ageing.",
-                tags: ["Botox", "Masseter Slim", "Brow Lift"]
+                tags: ["Botox", "Masseter Slim", "Brow Lift", "Dermal Fillers"]
               }
             ].map((service, i) => (
               <Card key={i} className="bg-background border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
