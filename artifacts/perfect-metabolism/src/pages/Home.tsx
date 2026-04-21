@@ -654,9 +654,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { quote: "I lost 14 kg in 4 months with the Complete package. Dr. Nihara's approach is nothing like a regular diet clinic — she actually understands your body at a cellular level.", author: "Priya Ramesh", detail: "Lost 14 kg · 4 months" },
-              { quote: "The botox and lip filler results are so natural. I've been to other clinics and always looked overdone. Dr. Nihara has a real eye for aesthetics. I trust no one else.", author: "Sakshi Mehta", detail: "Aesthetics patient · 1 year" },
-              { quote: "The Concierge package was worth every rupee. My PCOS was the root cause of my weight gain and Dr. Nihara figured it out in week one. I feel like a completely new person.", author: "Ananya Krishnan", detail: "Lost 19 kg · PCOS management" }
+              { quote: "I lost 14 kg in 4 months with the Complete package. Dr. Nihara's approach is nothing like a regular diet clinic — she actually understands your body at a cellular level.", author: "Usha Ramesh", detail: "Lost 14 kg · 4 months" },
+              { quote: "The botox and lip filler results are so natural. I've been to other clinics and always looked overdone. Dr. Nihara has a real eye for aesthetics. I trust no one else.", author: "Veda Nidamarthi", detail: "Aesthetics patient · 1 year" },
+              { quote: "I had been dealing with hair thinning for years and tried everything. After just 3 months of Dr. Nihara's hair restoration programme, the regrowth has been incredible. My confidence is back completely.", author: "Dhruv Gupta", detail: "Hair Restoration patient · 3 months" }
             ].map((testimonial, i) => (
               <Card key={i} className="bg-white border-none shadow-sm flex flex-col justify-between">
                 <CardContent className="pt-8">
