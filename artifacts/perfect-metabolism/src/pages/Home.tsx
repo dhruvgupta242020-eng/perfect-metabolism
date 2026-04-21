@@ -29,7 +29,7 @@ const SERVICES = [
   },
   {
     title: "Micro-needling & Acne Scars",
-    description: "Advanced RF micro-needling to stimulate collagen, resurface skin texture, and visibly reduce acne scars for a smooth, radiant complexion.",
+    description: "Precise micro-needling to stimulate collagen, resurface skin texture, and visibly reduce acne scars for a smooth, radiant complexion.",
     image: "/microneedling-acne.png"
   },
   {
