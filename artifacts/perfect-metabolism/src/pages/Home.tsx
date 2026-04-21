@@ -18,14 +18,14 @@ const SERVICES = [
     image: "/medical-consultation.png"
   },
   {
-    title: "Dermal Fillers & Botox",
-    description: "Experience fuller, smoother skin and lips. Restore volume and erase fine lines with natural-looking results and zero downtime.",
-    image: "/dermal-fillers.png"
-  },
-  {
     title: "Medical Weight Loss",
     description: "Medically supervised GLP-1 protocols and personalised programmes to achieve sustainable, lasting weight loss.",
     image: "/medical-weight-loss.png"
+  },
+  {
+    title: "Dermal Fillers & Botox",
+    description: "Experience fuller, smoother skin and lips. Restore volume and erase fine lines with natural-looking results and zero downtime.",
+    image: "/dermal-fillers.png"
   },
   {
     title: "Medical Hair Restoration",
