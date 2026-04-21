@@ -261,7 +261,7 @@ export default function Home() {
               <p className="text-sm tracking-[0.2em] uppercase text-brand-gold mb-4 font-medium">About Dr. Nihara</p>
               <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8">Medicine Meets <span className="italic text-brand-gold">Precision.</span></h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Dr. Nihara Sudarshan is an American Board Certified physician with an MBBS and MD, bringing world-class medical expertise to metabolic health and aesthetic medicine. Her approach combines evidence-based medicine with personalised care, ensuring every patient receives a treatment protocol tailored specifically to their body, goals, and lifestyle.
+                Dr. Nihara Sudarshan is an American Board Certified physician with an MBBS and MD, bringing U.S. based medical expertise to metabolic health and aesthetic medicine. Her approach combines evidence-based medicine with personalised care, ensuring every patient receives a treatment protocol tailored specifically to their body, goals, and lifestyle.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10">
                 With over 8 years of clinical experience and more than 500 successful patient transformations, Dr. Nihara has established Perfect Metabolism as the premier destination for medical weight loss and aesthetic treatments in India.
