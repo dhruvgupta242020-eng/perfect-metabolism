@@ -28,6 +28,11 @@ const SERVICES = [
     image: "/dermal-fillers.png"
   },
   {
+    title: "Micro-needling & Acne Scars",
+    description: "Advanced RF micro-needling to stimulate collagen, resurface skin texture, and visibly reduce acne scars for a smooth, radiant complexion.",
+    image: "/microneedling-acne.png"
+  },
+  {
     title: "Medical Hair Restoration",
     description: "Evidence-based treatments to restore hair density and health, tailored to your specific hair loss pattern.",
     image: "/hair-restoration.png"

@@ -60,3 +60,9 @@ id = "2hs4BHIBEf-xbROzKg2x_"
 uri = "file://artifacts/perfect-metabolism/public/medical-consultation.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "1m2fDhyCfV6XXncZdpHiu"
+uri = "file://artifacts/perfect-metabolism/public/microneedling-acne.png"
+type = "image"
+title = "generated_image"
