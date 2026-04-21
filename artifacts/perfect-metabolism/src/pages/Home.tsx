@@ -13,6 +13,11 @@ const MARQUEE_ITEMS = [
 
 const SERVICES = [
   {
+    title: "Medical Consultation",
+    description: "A thorough one-on-one consultation with Dr. Nihara to understand your health goals, review bloodwork, and design your personalised treatment plan.",
+    image: "/medical-consultation.png"
+  },
+  {
     title: "Dermal Fillers & Botox",
     description: "Experience fuller, smoother skin and lips. Restore volume and erase fine lines with natural-looking results and zero downtime.",
     image: "/dermal-fillers.png"

@@ -54,3 +54,9 @@ id = "L_AWxud5yMmJ0TmYg1m-Q"
 uri = "file://artifacts/perfect-metabolism/public/diet-nutrition.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "2hs4BHIBEf-xbROzKg2x_"
+uri = "file://artifacts/perfect-metabolism/public/medical-consultation.png"
+type = "image"
+title = "generated_image"
