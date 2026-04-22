@@ -66,3 +66,21 @@ id = "1m2fDhyCfV6XXncZdpHiu"
 uri = "file://artifacts/perfect-metabolism/public/microneedling-acne.png"
 type = "image"
 title = "generated_image"
+
+[[generated]]
+id = "lj4gIYbFxfVnnqgrETk3x"
+uri = "file://artifacts/perfect-metabolism/public/ba-skin.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "NjjH9rUCSGwXPvT5unRxz"
+uri = "file://artifacts/perfect-metabolism/public/ba-hair.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "9ym5TiYilwVgQUbEsywi4"
+uri = "file://artifacts/perfect-metabolism/public/ba-weight.png"
+type = "image"
+title = "generated_image"

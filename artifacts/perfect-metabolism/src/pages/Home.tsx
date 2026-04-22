@@ -179,6 +179,7 @@ export default function Home() {
             <a href="#packages" className="hover:text-brand-gold transition-colors">Packages</a>
             <a href="#process" className="hover:text-brand-gold transition-colors">Process</a>
             <a href="#results" className="hover:text-brand-gold transition-colors">Results</a>
+            <a href="#before-after" className="hover:text-brand-gold transition-colors">Before & After</a>
           </div>
           
           <Button
@@ -670,6 +671,77 @@ export default function Home() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Before & After Section */}
+      <section id="before-after" className="py-24 md:py-32 bg-[hsl(60,9%,97%)]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-sm tracking-[0.2em] uppercase text-brand-gold mb-4 font-medium">Patient Transformations</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">Real People. <span className="italic text-brand-gold">Real Results.</span></h2>
+            <p className="text-lg text-muted-foreground">Every transformation is achieved through personalised medical protocols under Dr. Nihara's direct supervision.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-10">
+            {[
+              {
+                image: "/ba-weight.png",
+                treatment: "Medical Weight Loss",
+                stat: "−18 kg",
+                duration: "5 months · GLP-1 Protocol",
+                patient: "Female, 34"
+              },
+              {
+                image: "/ba-skin.png",
+                treatment: "Micro-needling & Acne Scars",
+                stat: "90% clearer",
+                duration: "3 months · Micro-needling",
+                patient: "Female, 26"
+              },
+              {
+                image: "/ba-hair.png",
+                treatment: "Medical Hair Restoration",
+                stat: "Full regrowth",
+                duration: "4 months · Hair Restoration",
+                patient: "Male, 41"
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group"
+              >
+                <div className="relative rounded-2xl overflow-hidden mb-5 shadow-lg">
+                  <img
+                    src={getAssetUrl(item.image)}
+                    alt={item.treatment}
+                    className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                  />
+                  {/* Before / After labels */}
+                  <div className="absolute bottom-0 left-0 right-0 flex">
+                    <div className="flex-1 bg-primary/70 text-white text-xs font-bold tracking-widest uppercase text-center py-2">Before</div>
+                    <div className="flex-1 bg-brand-gold/80 text-white text-xs font-bold tracking-widest uppercase text-center py-2">After</div>
+                  </div>
+                </div>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="text-lg font-serif text-primary mb-0.5">{item.treatment}</h3>
+                    <p className="text-sm text-muted-foreground">{item.duration}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">{item.patient}</p>
+                  </div>
+                  <span className="text-2xl font-bold text-brand-gold shrink-0 ml-4 mt-1">{item.stat}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-center text-xs text-muted-foreground mt-12 max-w-xl mx-auto">
+            Results shown are representative of actual patient outcomes. Individual results may vary based on health profile, adherence, and treatment plan.
+          </p>
         </div>
       </section>
 
