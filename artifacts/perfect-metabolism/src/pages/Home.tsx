@@ -656,7 +656,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { quote: "I lost 14 kg in 4 months with the Complete package. Dr. Nihara's approach is nothing like a regular diet clinic — she actually understands your body at a cellular level.", author: "Usha Ramesh", detail: "Lost 14 kg · 4 months" },
-              { quote: "The botox and lip filler results are so natural. I've been to other clinics and always looked overdone.", author: "Veda Nidamarthi", detail: "Aesthetics patient · 1 year" },
+              { quote: "I started the GLP-1 programme not knowing what to expect. Within 6 weeks I had already lost 6 kg and my energy levels were completely transformed. Dr. Nihara made the entire process feel safe and supported.", author: "Veda Nidamarthi", detail: "Lost 11 kg · GLP-1 Protocol" },
               { quote: "I had been dealing with hair thinning for years and tried everything. After just 3 months of Dr. Nihara's hair restoration programme, the regrowth has been incredible. My confidence is back completely.", author: "Dhruv Gupta", detail: "Hair Restoration patient · 3 months" }
             ].map((testimonial, i) => (
               <Card key={i} className="bg-white border-none shadow-sm flex flex-col justify-between">
