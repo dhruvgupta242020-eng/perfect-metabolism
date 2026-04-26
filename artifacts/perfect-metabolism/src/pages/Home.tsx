@@ -723,7 +723,7 @@ export default function Home() {
                         <img
                           src={getAssetUrl(item.beforeImage)}
                           alt={`${item.treatment} before`}
-                          className="w-full h-72 object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
+                          className="w-full h-[420px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-primary/70 text-white text-xs font-bold tracking-widest uppercase text-center py-2">Before</div>
                       </div>
@@ -731,7 +731,7 @@ export default function Home() {
                         <img
                           src={getAssetUrl(item.afterImage)}
                           alt={`${item.treatment} after`}
-                          className="w-full h-72 object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
+                          className="w-full h-[420px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-brand-gold/80 text-white text-xs font-bold tracking-widest uppercase text-center py-2">After</div>
                       </div>
