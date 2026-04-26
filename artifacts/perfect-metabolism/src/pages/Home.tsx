@@ -683,7 +683,7 @@ export default function Home() {
             <p className="text-lg text-muted-foreground">Every transformation is achieved through personalised medical protocols under Dr. Nihara's direct supervision.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-8">
             {[
               {
                 beforeImage: "/ba-weight-before.jpg",
@@ -692,6 +692,14 @@ export default function Home() {
                 stat: "−18 kg",
                 duration: "5 months · GLP-1 Protocol",
                 patient: "Female, 60"
+              },
+              {
+                beforeImage: "/ba-weight2-before.jpg",
+                afterImage: "/ba-weight2-after.jpg",
+                treatment: "Medical Weight Loss",
+                stat: "−14 kg",
+                duration: "4 months · GLP-1 Protocol",
+                patient: "Male, 27"
               },
               {
                 image: "/ba-skin.png",
