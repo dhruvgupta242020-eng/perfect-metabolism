@@ -686,11 +686,12 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-10">
             {[
               {
-                image: "/ba-weight.png",
+                beforeImage: "/ba-weight-before.jpg",
+                afterImage: "/ba-weight-after.jpg",
                 treatment: "Medical Weight Loss",
                 stat: "−18 kg",
                 duration: "5 months · GLP-1 Protocol",
-                patient: "Female, 34"
+                patient: "Female, 60"
               },
               {
                 image: "/ba-skin.png",
@@ -716,16 +717,38 @@ export default function Home() {
                 className="group"
               >
                 <div className="relative rounded-2xl overflow-hidden mb-5 shadow-lg">
-                  <img
-                    src={getAssetUrl(item.image)}
-                    alt={item.treatment}
-                    className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                  />
-                  {/* Before / After labels */}
-                  <div className="absolute bottom-0 left-0 right-0 flex">
-                    <div className="flex-1 bg-primary/70 text-white text-xs font-bold tracking-widest uppercase text-center py-2">Before</div>
-                    <div className="flex-1 bg-brand-gold/80 text-white text-xs font-bold tracking-widest uppercase text-center py-2">After</div>
-                  </div>
+                  {item.beforeImage && item.afterImage ? (
+                    <div className="flex w-full">
+                      <div className="relative flex-1">
+                        <img
+                          src={getAssetUrl(item.beforeImage)}
+                          alt={`${item.treatment} before`}
+                          className="w-full h-72 object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-primary/70 text-white text-xs font-bold tracking-widest uppercase text-center py-2">Before</div>
+                      </div>
+                      <div className="relative flex-1">
+                        <img
+                          src={getAssetUrl(item.afterImage)}
+                          alt={`${item.treatment} after`}
+                          className="w-full h-72 object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 bg-brand-gold/80 text-white text-xs font-bold tracking-widest uppercase text-center py-2">After</div>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <img
+                        src={getAssetUrl((item as any).image)}
+                        alt={item.treatment}
+                        className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 flex">
+                        <div className="flex-1 bg-primary/70 text-white text-xs font-bold tracking-widest uppercase text-center py-2">Before</div>
+                        <div className="flex-1 bg-brand-gold/80 text-white text-xs font-bold tracking-widest uppercase text-center py-2">After</div>
+                      </div>
+                    </>
+                  )}
                 </div>
                 <div className="flex items-start justify-between">
                   <div>
