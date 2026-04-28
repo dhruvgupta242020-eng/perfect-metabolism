@@ -52,10 +52,29 @@ const SERVICES = [
 function BookingModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error ?? "Something went wrong. Please try again.");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleClose = () => {
@@ -139,8 +158,11 @@ function BookingModal({ open, onClose }: { open: boolean; onClose: () => void })
                       className="w-full px-4 py-3 rounded-xl border border-border bg-white text-primary placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-brand-gold/40 text-sm resize-none"
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full py-6 text-base font-medium tracking-wide mt-2">
-                    Request My Consultation
+                  {error && (
+                    <p className="text-sm text-red-500 text-center">{error}</p>
+                  )}
+                  <Button type="submit" disabled={loading} className="w-full bg-brand-gold hover:bg-brand-gold/90 text-white rounded-full py-6 text-base font-medium tracking-wide mt-2 disabled:opacity-60">
+                    {loading ? "Sending…" : "Request My Consultation"}
                   </Button>
                 </form>
               </>

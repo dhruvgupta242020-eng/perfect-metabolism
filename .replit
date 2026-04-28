@@ -85,3 +85,8 @@ externalPort = 6800
 
 [nix]
 channel = "stable-25_05"
+
+[userenv]
+
+[userenv.shared]
+GMAIL_USER = "perfectmetabolism@gmail.com"
