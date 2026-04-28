@@ -10,7 +10,7 @@ name = "API Server"
 paths = ["/api"]
 
 [services.development]
-run = "pnpm --filter @workspace/api-server run dev"
+run = "sh -c 'cd /home/runner/workspace/artifacts/api-server && NODE_ENV=development node ./build.mjs && exec node --enable-source-maps ./dist/index.mjs'"
 
 [services.production]
 
@@ -30,3 +30,7 @@ NODE_ENV = "production"
 
 [services.production.health.startup]
 path = "/api/healthz"
+
+[services.env]
+PORT = "8080"
+NODE_ENV = "development"
