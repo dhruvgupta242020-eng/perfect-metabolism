@@ -517,10 +517,6 @@ export default function Home() {
                 Most Popular
               </div>
               <h3 className="text-3xl font-bold text-white mb-2">Elite</h3>
-              <div className="flex items-end gap-1 mb-1">
-                <span className="text-4xl font-bold text-white">₹26,911</span>
-                <span className="text-white/60 mb-1">/month</span>
-              </div>
               <div className="mb-8" />
               <ul className="space-y-3 mb-10 flex-1">
                 {[
@@ -554,10 +550,6 @@ export default function Home() {
               className="rounded-3xl border border-border p-8 bg-background flex flex-col"
             >
               <h3 className="text-3xl font-bold text-primary mb-2">Starter</h3>
-              <div className="flex items-end gap-1 mb-1">
-                <span className="text-4xl font-bold text-primary">₹14,911</span>
-                <span className="text-muted-foreground mb-1">/month</span>
-              </div>
               <div className="mb-8" />
               <ul className="space-y-3 mb-10 flex-1">
                 {[
@@ -592,10 +584,6 @@ export default function Home() {
               className="rounded-3xl border border-border p-8 bg-background flex flex-col"
             >
               <h3 className="text-3xl font-bold text-primary mb-2">Transform</h3>
-              <div className="flex items-end gap-1 mb-1">
-                <span className="text-4xl font-bold text-primary">₹21,911</span>
-                <span className="text-muted-foreground mb-1">/month</span>
-              </div>
               <div className="mb-8" />
               <ul className="space-y-3 mb-10 flex-1">
                 {[
