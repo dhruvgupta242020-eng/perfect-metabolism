@@ -175,7 +175,7 @@ function BookingModal({ open, onClose }: { open: boolean; onClose: () => void })
 }
 
 export default function Home() {
-  const getAssetUrl = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, "") + path;
+  const getAssetUrl = (path: string) => path;
   const [bookingOpen, setBookingOpen] = useState(false);
   const [serviceOffset, setServiceOffset] = useState(0);
   const VISIBLE = 4;
